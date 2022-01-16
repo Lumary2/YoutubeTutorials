@@ -14,7 +14,7 @@ public class Solution {
           
         var row=1;
         var up=true;
-        int charCount=1;
+
         foreach(char c in s){
             
             dict[row]+=c.ToString();
