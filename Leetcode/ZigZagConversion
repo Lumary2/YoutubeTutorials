@@ -22,16 +22,12 @@ public class Solution {
             if(row==1||(row<numRows)&&up==true){
               
                 up=true;
-                row++;
-                continue;
-               
+                row++;               
             }
-            else{
-                
+            else{            
                 row--;
                 up=false;
             }
-            charCount++;
         }
         var result="";
         for(int i=1;i<numRows+1;i++){
