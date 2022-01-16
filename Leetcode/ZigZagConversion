@@ -1,0 +1,46 @@
+public class Solution {
+    public string Convert(string s, int numRows) {
+     
+        if(numRows==1){
+            return s;
+        }
+            
+         Dictionary<int,string>dict=new Dictionary<int,string>();
+            
+            for(int i=1;i<numRows+1;i++){
+                
+                dict.Add(i,"");
+            }
+          
+        var row=1;
+        var up=true;
+        int charCount=1;
+        foreach(char c in s){
+            
+            dict[row]+=c.ToString();
+                       
+            if(row==1||(row<numRows)&&up==true){
+              
+                up=true;
+                row++;
+                continue;
+               
+            }
+            else{
+                
+                row--;
+                up=false;
+            }
+            charCount++;
+        }
+        var result="";
+        for(int i=1;i<numRows+1;i++){
+                
+                result+=dict[i];
+            }    
+     
+         return result;
+    }
+        
+       
+    }
